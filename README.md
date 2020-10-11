@@ -10,9 +10,9 @@ This repository is a personal collection of notes and resources related to membr
 
 ![](dev/diagram/whole-cell-voltage-clamp-diagram.png)
 
-![](models/two-electrode-advanced/voltage-clamp-circuit.png)
+![](models/single-electrode-advanced/voltage-clamp-circuit.png)
 
-![](models/two-electrode-advanced/voltage-clamp-simulation.png)
+![](models/single-electrode-advanced/voltage-clamp-simulation.png)
 
 </div>
 
@@ -23,8 +23,8 @@ This repository is a personal collection of notes and resources related to membr
 
 <div align="center">
 
-![](models/single-electrode-simple/VC-single-electrode-circuit.png)
+![](models/two-electrode/VC-two-electrode-circuit.png)
 
-![](models/single-electrode-simple/VC-single-electrode-simulation.png)
+![](models/two-electrode/VC-two-electrode-simulation.png)
 
 </div>
