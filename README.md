@@ -23,8 +23,8 @@ This repository is a personal collection of notes and resources related to membr
 
 <div align="center">
 
-![](models\single-electrode-simple\VC-single-electrode-circuit.png)
+![](models/single-electrode-simple/VC-single-electrode-circuit.png)
 
-![](models\single-electrode-simple\VC-single-electrode-simulation.png)
+![](models/single-electrode-simple/VC-single-electrode-simulation.png)
 
 </div>
