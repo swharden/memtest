@@ -1,14 +1,34 @@
 # The Patch-Clamp Membrane Test
 
-This repository is a personal collection of notes and resources related to membrane tests (analytical methods performed on electrical traces to calculate membrane parameters of cells). It is currently being developed as part of a multi-part blog post on www.swharden.com
+This repository is a personal collection of notes and resources related to membrane tests.
 
-## Single Electrode Whole-Cell Voltage Clamp Circuit
+## Articles
 
-**I created this model to simulate a patch-clamped neuron in whole-cell configuration.** Square voltage-clamp pulses mimic a membrane test protocol. By analyzing the clamp current trace alone I can derive values for Ra (access resistance), Rm (membrane resistance), and Cm (cell capacitance).
+* [**Exploring the Membrane Test with a Voltage-Clamped Neuron Model**](https://swharden.com/blog/2020-10-11-model-neuron-ltspice/) **👈 This article describes the theory behind membrane test simulation and calculation** and has extensive notes about modeling patch-clamp systems with LTSpice. It also has an excellent list of resources including links to primary research papers about membrane tests.
+
+## Code
+
+* [**Membrane Test Calculations with Python**](memtest/memtest-step.ipynb) - A Jupyter notebook demonstrating how to calculate Ra, Cm, and Rm from a simulated sweep of a voltage-clamp step protocol. It also demonstrates how to analyze LTSpice simulation data in Python.
+
+<div align="center">
+
+![](models/single-electrode-advanced/voltage-clamp-simple-fig1.png)
+
+</div>
+
+## Graphics
 
 <div align="center">
 
 ![](dev/diagram/whole-cell-voltage-clamp-diagram.png)
+
+![](dev/diagram/voltage-clamp-square-membrane-test.png)
+
+</div>
+
+## Single Electrode Voltage-Clamp Model
+
+<div align="center">
 
 ![](models/single-electrode-advanced/voltage-clamp-circuit.png)
 
@@ -16,10 +36,7 @@ This repository is a personal collection of notes and resources related to membr
 
 </div>
 
-
-## Two Electrode Voltage Clamp Circuit
-
-**I created this model to simulate a giant squid axon studied with a two-electrode system.** It's not particularly useful other than as a thought exercise. By clamping between two different voltages you can measure the difference in current passing through the stimulation resistor to estimate the neuron's membrane resistance.
+## Two Electrode Voltage-Clamp Model
 
 <div align="center">
 
@@ -28,43 +45,3 @@ This repository is a personal collection of notes and resources related to membr
 ![](models/two-electrode/VC-two-electrode-simulation.png)
 
 </div>
-
-## Analyze LTSpice Data with Python
-
-```python
-import ltspice
-l = ltspice.Ltspice("voltage-clamp.raw")
-l.parse()
-
-times = l.getTime() * 1e3 # ms
-Vcell = l.getData('V(n007)') * 1e3  # mV
-Vcommand = l.getData('V(n006)') * 1e3  # mV
-Iclamp = l.getData('I(Rf)') * 1e12  # pA
-```
-
-<div align="center">
-
-![](models/single-electrode-advanced/voltage-clamp-simple-fig1.png)
-
-</div>
-
-```python
-import matplotlib.pyplot as plt
-
-ax1 = plt.subplot(211)
-plt.grid(ls='--', alpha=.5)
-plt.plot(times, Iclamp, 'r-')
-plt.ylabel("Current (pA)")
-
-plt.subplot(212, sharex=ax1)
-plt.grid(ls='--', alpha=.5)
-plt.plot(times, Vcell, label="Cell")
-plt.plot(times, Vcommand, label="Clamp")
-plt.ylabel("Potential (mV)")
-plt.xlabel("Time (milliseconds)")
-plt.legend()
-
-plt.margins(0, .1)
-plt.tight_layout()
-plt.savefig("voltage-clamp-simple-fig1.png")
-```
