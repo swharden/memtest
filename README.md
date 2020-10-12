@@ -20,9 +20,7 @@ This repository is a personal collection of notes and resources related to membr
 
 <div align="center">
 
-![](dev/diagram/whole-cell-voltage-clamp-diagram.png)
-
-![](dev/diagram/voltage-clamp-square-membrane-test.png)
+![](dev/diagram/whole-cell-voltage-clamp-diagram.png)![](dev/diagram/voltage-clamp-square-membrane-test.png)
 
 </div>
 
