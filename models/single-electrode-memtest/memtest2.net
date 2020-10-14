@@ -1,17 +1,19 @@
-* C:\Users\scott\Documents\GitHub\memtest\models\single-electrode-memtest\memtest.asc
+* C:\Users\scott\Documents\GitHub\memtest\models\single-electrode-memtest\memtest2.asc
 Rf Vo N001 500Meg
 V1 Vcc 0 9
 XU1 Vc N001 Vcc -Vcc Vo level.2 Avol=1Meg GBW=10Meg Slew=10Meg ilimit=25m rail=0 Vos=0 phimargin=45 en=0 enk=0 in=0 ink=0 Rin=500Meg
 V2 0 -Vcc 9
-V4 Vc 0 PULSE(-75m -65m 0 1f 1f .025 .05 999)
+Vsquare NC_01 0 PULSE(-75m -65m 0 1f 1f .025 .05 999)
 Ra N001 Vm 15Meg
 Cm Vm 0 150p
 Rm Vm N002 500Meg
 V3 N002 0 -70m Rser=99999G
-* -65 to -75 mV\nsteps at 20 Hz
+Vramp Vc 0 PULSE(-70m -80m .5 50ms 50ms 0 10 999)
+* 10 mV 20 Hz\nsquare pulse
 * Power Supply
 * Ideal Voltage-Clamped Neuron\nin Whole-Cell Configuration
-.tran 0 .15 .045 .0000001
+.tran 0 .7 .4 .0000001
+* 10mV/50ms\nramps
 .lib UniversalOpamps2.sub
 .backanno
 .end
