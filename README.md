@@ -8,11 +8,19 @@ This repository is a personal collection of notes and resources related to membr
 
 ## Code
 
-* [**Membrane Test Calculations with Python**](memtest/memtest-step.ipynb) - A Jupyter notebook demonstrating how to calculate Ra, Cm, and Rm from a simulated sweep of a voltage-clamp step protocol. It also demonstrates how to analyze LTSpice simulation data in Python.
+* [**Membrane Test Step**](memtest/memtest-step.ipynb) - A Jupyter notebook demonstrating how to calculate Ra, Cm, and Rm from a simulated sweep of a voltage-clamp step protocol. It also demonstrates how to analyze LTSpice simulation data in Python.
 
 <div align="center">
 
 ![](models/single-electrode-advanced/voltage-clamp-simple-fig1.png)
+
+</div>
+
+* [**Membrane Test Ramp**](memtest/memtest-ramp.ipynb) - A Jupyter notebook demonstrating how to calculate Cm from a V-shaped voltage clamp ramp.
+
+<div align="center">
+
+![](memtest/mtramp1.png)
 
 </div>
 
