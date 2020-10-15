@@ -42,6 +42,8 @@ This repository is a personal collection of notes and resources related to membr
 
 ![](models/single-electrode-memtest/ramp-simulation.png)
 
+![](models/single-electrode-memtest/sine-simulation.png)
+
 </div>
 
 ## Two Electrode Voltage-Clamp Model
